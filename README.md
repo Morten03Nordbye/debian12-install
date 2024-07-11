@@ -15,6 +15,21 @@ sudo mv /home/mnordbye/sddm.conf /etc/sddm.conf.d/
 sudo apt install qml-module-qtgraphicaleffects qml-module-qtquick-controls
 #### Download zip
 https://www.opendesktop.org/p/1240784
-sudo tar -xzvf ~/Downloads/sddm-chili.tar.gz -C /usr/share/sddm/themes
+sudo tar -xzvf ~/Downloads/sddm-chili.tar.tar -C /usr/share/sddm/themes
 sudo vim /etc/sddm.conf.d/sddm.conf
+### GTK themes (might change)
+sudo apt install lxappearance -y
+sudo apt install arc-theme papirus-icon-theme y
+### Filbrowser
+sudo apt install thunar
+### Picom
+sudo apt install picom -y
+### background
+cd /home/mnordbye/Pictures
+git clone https://gitlab.com/dwt1/wallpapers.git
+sudo apt install nitrogen -y
+### Rofi
+
+### Polybar
+
 
