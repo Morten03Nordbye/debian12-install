@@ -29,7 +29,8 @@ cd /home/mnordbye/Pictures
 git clone https://gitlab.com/dwt1/wallpapers.git
 sudo apt install nitrogen -y
 ### Rofi
-
+sudo apt install rofi -y
+git clone https://github.com/adi1090x/rofi.git
 ### Polybar
 
 
