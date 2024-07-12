@@ -30,7 +30,15 @@ git clone https://gitlab.com/dwt1/wallpapers.git
 sudo apt install nitrogen -y
 ### Rofi
 sudo apt install rofi -y
+cd /home/mnordbye/Downloads
 git clone https://github.com/adi1090x/rofi.git
+cd rofi
+chmod +x setup.sh
+./setup.sh
+cd /home/mnordbye/.config/rofi
 ### Polybar
+sudo apt install polybar -y
+### system font
+bash -c  "$(curl -fsSL https://raw.githubusercontent.com/officialrajdeepsingh/nerd-fonts-installer/main/install.sh)"
 
 
