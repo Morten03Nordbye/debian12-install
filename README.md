@@ -31,8 +31,8 @@ sudo mv /home/mnordbye/sddm.conf /etc/sddm.conf.d/
 sudo apt install qml-module-qtgraphicaleffects qml-module-qtquick-controls
 ```
 #### Download and Install SDDM Theme
+Download tar from https://www.opendesktop.org/p/1240784
 ```bash
-wget https://www.opendesktop.org/p/1240784 -O ~/Downloads/sddm-chili.tar.tar
 sudo tar -xzvf ~/Downloads/sddm-chili.tar.tar -C /usr/share/sddm/themes
 sudo vim /etc/sddm.conf.d/sddm.conf
 ```
