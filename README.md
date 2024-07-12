@@ -40,5 +40,13 @@ cd /home/mnordbye/.config/rofi
 sudo apt install polybar -y
 ### system font
 bash -c  "$(curl -fsSL https://raw.githubusercontent.com/officialrajdeepsingh/nerd-fonts-installer/main/install.sh)"
+#### install "Hack"
+echo "Xft.antialias: 1" >> ~/.Xresources
+echo "Xft.hinting: 1" >> ~/.Xresources
+echo "Xft.hintstyle: hintslight" >> ~/.Xresources
+echo "Xft.rgba: rgb" >> ~/.Xresources
+echo "Xft.lcdfilter: lcddefault" >> ~/.Xresources
+
+xrdb -merge ~/.Xresources
 
 
