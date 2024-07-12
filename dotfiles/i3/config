@@ -1,0 +1,157 @@
+# i3 config file (v4)
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+# Set mod key
+set $mod Mod4
+
+# Font for window titles and bar
+font pango:monospace 8
+
+# Screen lock and network manager applet
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id nm-applet
+
+# PulseAudio volume control
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Mouse modifier for floating windows
+floating_modifier $mod
+
+# Key bindings
+bindsym $mod+Return exec terminator
+bindsym $mod+Shift+q kill
+bindsym $mod+d exec dmenu_run
+
+# Focus control
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+oslash focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+oslash move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Layout control
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
+bindsym $mod+s layout stacking
+bindsym $mod+q layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+z focus mode_toggle
+bindsym $mod+a focus parent
+
+# Workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# Configuration management
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Resize mode
+mode "resize" {
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym oslash resize grow width 10 px or 10 ppt
+
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Custom key bindings and settings
+# Launch Flameshot for taking screenshots
+bindsym $mod+x exec flameshot gui
+
+# Open Ubuntu settings
+bindsym $mod+Shift+s exec gnome-control-center
+
+# Lock the screen using i3lock
+bindsym $mod+Escape exec i3lock -c 000000
+
+# Restore wallpaper using Nitrogen
+exec --no-startup-id nitrogen --restore
+
+# Launch Rofi application launcher
+bindsym $mod+space exec --no-startup-id /home/mnordbye/.config/rofi/launchers/misc/launcher.sh
+
+# Set window borders to 1.5 pixels
+for_window [class="^.*"] border pixel 1.5
+
+# Start Polybar
+exec_always --no-startup-id /home/mnordbye/.config/polybar/polybar.sh
+
+# Launch a Python script for clipboard management
+bindsym $mod+w exec python3 /home/mnordbye/Documents/Scripts/OS-Scripts/BFY/bfy_clipboard.py
+
+# Set keyboard repeat rate
+exec xset r rate 200 45
+
+# Start Dunst for notifications with custom config
+exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
+
+# Toggle Dunst notifications on and off
+bindsym $mod+n exec dunstctl set-paused toggle
+
+# Launch Rofi-BW (Bitwarden integration with Rofi)
+bindsym $mod+c exec rofi-bw
+
+# Launch Bitwarden
+bindsym $mod+b exec bitwarden
+
