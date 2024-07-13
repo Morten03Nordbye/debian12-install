@@ -37,10 +37,15 @@ sudo tar -xzvf ~/Downloads/sddm-chili.tar.tar -C /usr/share/sddm/themes
 sudo vim /etc/sddm.conf.d/sddm.conf
 ```
 ### Configure grub theme
-```bash
 Download zip from https://github.com/shvchk/poly-dark
-
+Change "GRUB_GFXMODE" to match display
+```bash
+sudo vim /etc/default/grub
 ```
+```bash
+sudo update-grub
+```
+
 ### Install and Configure GTK Themes
 ```bash
 sudo apt install lxappearance arc-theme papirus-icon-theme -y
@@ -78,7 +83,7 @@ cd /home/mnordbye/.config/rofi
 ```bash
 sudo apt install polybar -y
 ```
-
+Copy over config file
 ### Install System Font
 ```bash
 bash -c  "$(curl -fsSL https://raw.githubusercontent.com/officialrajdeepsingh/nerd-fonts-installer/main/install.sh)"
