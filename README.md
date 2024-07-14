@@ -96,6 +96,7 @@ cd /home/mnordbye/Pictures
 git clone https://gitlab.com/dwt1/wallpapers.git
 sudo apt install nitrogen -y
 ```
+Configure background
 ### Install and Configure Rofi
 ```bash
 sudo apt install rofi -y
@@ -110,7 +111,6 @@ cd /home/mnordbye/.config/rofi
 ```bash
 sudo apt install polybar -y
 ```
-Copy over config file
 ### Sound and Media Support
 ```bash
 sudo apt install alsa-utils pavucontrol pulseaudio -y
@@ -121,7 +121,7 @@ sudo apt install bluez blueman -y
 ```
 ### Printer Support
 ```bash
-sudo apt install cups
+sudo apt install cups -y
 sudo systemctl start cups
 sudo systemctl enable cups
 ```
@@ -146,3 +146,4 @@ sudo apt install remmina -y
 ```bash
 sudo apt install timeshift -y
 ```
+### Copy over all config files(To do)
