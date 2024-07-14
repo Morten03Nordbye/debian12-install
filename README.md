@@ -64,8 +64,23 @@ sudo apt install lxappearance -y
 ```
 Download this theme
 https://www.gnome-look.org/p/1267246
+```bash
+mkdir -p  ~/.themes/ 
+tar -xf ~/Downloads/Nordic-darker.tar.xz -C ~/.themes/
+```
 Download icons
 https://github.com/bikass/kora
+```bash
+mkdir -p ~/.local/share/icons/
+mv ~/Downloads/kora/kora* ~/.local/share/icons/
+```
+Download cursors
+https://www.gnome-look.org/p/1197198
+```bash
+mkdir -p ~/.icons/
+tar -xf Bibata-Modern-Ice.tar.xz -C ~/.icons/
+```
+Use lxapperance to set theme, font, mouse and icons
 ### Install File Browser (Thunar)
 ```bash
 sudo apt install thunar -y
@@ -74,6 +89,7 @@ sudo apt install thunar -y
 ```bash
 sudo apt install picom -y
 ```
+Copy over config file
 ### Set Up Background
 ```bash
 cd /home/mnordbye/Pictures
