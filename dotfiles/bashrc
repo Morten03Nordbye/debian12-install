@@ -71,6 +71,14 @@ eval "$(thefuck --alias)"
 # Source the .bash_aliases file, if it exists
 [[ -s ~/.bash_aliases ]] && source ~/.bash_aliases
 
+# Source session-tool
+if [[ -f /home/mnordbye/Documents/Scripts/aws-session-tool/session-tool.sh ]]; then
+  source /home/mnordbye/Documents/Scripts/aws-session-tool/session-tool.sh
+fi
+
+# Source Rust environment if it exists
+[[ -s "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
+
 # Enable Helm autocompletion
 command -v helm > /dev/null && source <(helm completion bash)
 

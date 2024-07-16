@@ -1,0 +1,4 @@
+# .bash_profile
+# User specific environment and startup programs
+export PATH="$HOME/.tfenv/bin:$PATH"
+. "$HOME/.cargo/env"

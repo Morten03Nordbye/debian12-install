@@ -1,0 +1,49 @@
+[global]
+# Font settings
+font = Hack Nerd Font Regular 10
+
+# Geometry: width, height, corner
+geometry = "400x10-20+20"  # Adjust width and height
+
+# Word wrap setting
+word_wrap = true
+
+# Transparency and frame
+frame_width = 1
+frame_color = "#4C566A"
+separator_height = 2
+
+# Padding between text and sides
+horizontal_padding = 10
+vertical_padding = 8
+
+# Icon settings
+icon_position = left
+icon_size = 48  # Reduce the icon size
+
+# Background and foreground colors
+background = "#2E3440"
+foreground = "#D8DEE9"
+
+# Specify different formatting for summary and body
+format = "<b>%s</b>\n%b"
+
+# Low urgency colors
+[urgency_low]
+background = "#2E3440"
+foreground = "#81A1C1"
+timeout = 5
+
+# Normal urgency colors
+[urgency_normal]
+background = "#2E3440"
+foreground = "#D8DEE9"
+timeout = 10
+
+# High urgency colors
+[urgency_critical]
+background = "#BF616A"
+foreground = "#ECEFF4"
+timeout = 0
+
+

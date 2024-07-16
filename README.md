@@ -111,6 +111,12 @@ cd /home/mnordbye/.config/rofi
 ```bash
 sudo apt install polybar -y
 ```
+### Dunst
+```bash
+sudo apt install dunst -y
+mkdir -p ~/.config/dunst
+cp /etc/xdg/dunst/dunstrc~/.config/dunst/dunstrc
+```
 ### Sound and Media Support
 ```bash
 sudo apt install alsa-utils pavucontrol pulseaudio -y
