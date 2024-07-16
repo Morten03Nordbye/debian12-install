@@ -18,12 +18,6 @@ sudo apt update && sudo apt install i3 x11-xserver-utils nm-tray network-manager
 ```bash
 bash -c  "$(curl -fsSL https://raw.githubusercontent.com/officialrajdeepsingh/nerd-fonts-installer/main/install.sh)"
 # Install "Hack" font
-echo "Xft.antialias: 1" >> ~/.Xresources
-echo "Xft.hinting: 1" >> ~/.Xresources
-echo "Xft.hintstyle: hintslight" >> ~/.Xresources
-echo "Xft.rgba: rgb" >> ~/.Xresources
-echo "Xft.lcdfilter: lcddefault" >> ~/.Xresources
-xrdb -merge ~/.Xresources
 ```
 ### Install SDDM
 ```bash
