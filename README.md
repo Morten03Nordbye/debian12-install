@@ -14,14 +14,14 @@ reboot now
 ```bash
 sudo apt update && sudo apt install i3 x11-xserver-utils nm-tray network-manager vim gnupg2 arandr terminator zip curl net-tools -y
 ```
+### Install SDDM
+```bash
+sudo apt install sddm --no-install-recommends -y
+```
 ### Install System Font
 ```bash
 bash -c  "$(curl -fsSL https://raw.githubusercontent.com/officialrajdeepsingh/nerd-fonts-installer/main/install.sh)"
 # Install "Hack" font
-```
-### Install SDDM
-```bash
-sudo apt install sddm --no-install-recommends -y
 ```
 ### Install Additional SDDM Modules
 ```bash
