@@ -147,3 +147,31 @@ sudo apt install remmina -y
 sudo apt install timeshift -y
 ```
 ### Copy over all config files(To do)
+### Setup better looking encrypted password
+#### Install plymouth
+```bash
+sudo apt install plymouth plymouth-themes
+```
+#### Configure the Initramfs
+```bash
+sudo update-initramfs -u
+```
+#### Configure the Bootloader
+```bash
+sudo vim /etc/default/grub
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+#### update grub
+```bash
+sudo update-grub
+```
+#### Select a Plymouth Theme
+```bash
+sudo plymouth-set-default-theme --list
+sudo plymouth-set-default-theme theme
+```
+#### Update initramfs
+```bash
+sudo update-initramfs -u
+sudo reboot
+```
