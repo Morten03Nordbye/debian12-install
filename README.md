@@ -148,30 +148,87 @@ sudo apt install timeshift -y
 ```
 ### Copy over all config files(To do)
 ### Setup better looking encrypted password
-#### Install plymouth
+#### Install Required Packages
+
+First, update your package list and install the necessary packages for Plymouth and Plymouth themes:
 ```bash
+sudo apt update
 sudo apt install plymouth plymouth-themes
 ```
-#### Configure the Initramfs
+
+#### Configure Initramfs to Include Plymouth
+
+Next, configure initramfs to include Plymouth by editing the modules file:
+```bash
+sudo nano /etc/initramfs-tools/modules
+```
+Add the following line to the file:
+```text
+plymouth
+```
+
+#### Update Initramfs
+
+Update initramfs to apply the changes:
 ```bash
 sudo update-initramfs -u
 ```
-#### Configure the Bootloader
+
+#### Configure GRUB
+
+Edit the GRUB configuration file to enable Plymouth:
 ```bash
-sudo vim /etc/default/grub
+sudo nano /etc/default/grub
 ```
+Find the line that starts with `GRUB_CMDLINE_LINUX_DEFAULT` and modify it to include `quiet splash`:
+```text
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
-#### update grub
+```
+
+Then, update GRUB to apply the changes:
 ```bash
 sudo update-grub
 ```
-#### Select a Plymouth Theme
+
+#### Enable Plymouth on Boot
+
+Ensure Plymouth starts early enough in the boot process by creating a new configuration file:
 ```bash
-sudo plymouth-set-default-theme --list
-sudo plymouth-set-default-theme theme
+sudo nano /etc/initramfs-tools/conf.d/plymouth
 ```
-#### Update initramfs
+Add the following line to the file:
+```text
+FRAMEBUFFER=y
+```
+
+#### Select the Spinner Plymouth Theme
+
+Set the spinner theme as the default Plymouth theme:
 ```bash
+sudo plymouth-set-default-theme spinner
 sudo update-initramfs -u
+```
+
+#### Customize the Spinner Theme (Optional)
+
+If you wish to further customize the spinner theme, you can modify its configuration files:
+
+1. Navigate to the Plymouth theme directory:
+   ```bash
+   cd /usr/share/plymouth/themes/spinner
+   ```
+
+2. Edit the configuration file (`spinner.plymouth`) to make any necessary adjustments:
+   ```bash
+   sudo nano spinner.plymouth
+   ```
+
+3. Optionally, you can replace the images used by the spinner theme. For example, you can replace `throbber.png` with your own custom image.
+
+#### Reboot
+
+Reboot your system to see the changes take effect:
+```bash
 sudo reboot
 ```
+
