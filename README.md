@@ -23,10 +23,6 @@ sudo apt install sddm --no-install-recommends -y
 bash -c  "$(curl -fsSL https://raw.githubusercontent.com/officialrajdeepsingh/nerd-fonts-installer/main/install.sh)"
 # Install "Hack" font
 ```
-### Install Additional SDDM Modules
-```bash
-sudo apt install qml-module-qtgraphicaleffects qml-module-qtquick-controls -y
-```
 ### Configure SDDM
 ```bash
 sudo mkdir -p /usr/share/sddm/themes
@@ -35,14 +31,7 @@ sddm --example-config > /home/mnordbye/sddm.conf
 sudo mv /home/mnordbye/sddm.conf /etc/sddm.conf.d/
 ```
 ### Download and Install SDDM Theme
-Download tar from https://www.opendesktop.org/p/1240784
-```bash
-sudo tar -xzvf ~/Downloads/sddm-chili.tar.tar -C /usr/share/sddm/themes
-```
-Change to correct theme
-```bash
-sudo vim /etc/sddm.conf.d/sddm.conf
-```
+Download tar from https://www.opendesktop.org/p/1312658
 ### Configure grub theme
 Download zip from https://github.com/shvchk/poly-dark
 Change "GRUB_GFXMODE" to match display
