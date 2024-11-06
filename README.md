@@ -138,36 +138,22 @@ sudo apt install timeshift -y
 ### Copy over all config files(To do)
 ### Setup better looking encrypted password
 #### Install Required Packages
-
 First, update your package list and install the necessary packages for Plymouth and Plymouth themes:
 ```bash
 sudo apt update
 sudo apt install plymouth plymouth-themes
 ```
-
-#### Configure Initramfs to Include Plymouth
-
-Next, configure initramfs to include Plymouth by editing the modules file:
+Then clone this https://github.com/adi1090x/plymouth-themes?tab=readme-ov-file and follow guide to install hud_3
+After that do this
 ```bash
-sudo nano /etc/initramfs-tools/modules
+sudo plymouth-set-default-theme --list
+sudo plymouth-set-default-theme -R hud_3
 ```
-Add the following line to the file:
-```text
-plymouth
-```
-
-#### Update Initramfs
-
-Update initramfs to apply the changes:
-```bash
-sudo update-initramfs -u
-```
-
 #### Configure GRUB
 
 Edit the GRUB configuration file to enable Plymouth:
 ```bash
-sudo nano /etc/default/grub
+sudo vim /etc/default/grub
 ```
 Find the line that starts with `GRUB_CMDLINE_LINUX_DEFAULT` and modify it to include `quiet splash`:
 ```text
@@ -176,19 +162,9 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
 
 Then, update GRUB to apply the changes:
 ```bash
-sudo update-grub
+sudo update-grub2
 ```
 
-#### Enable Plymouth on Boot
-
-Ensure Plymouth starts early enough in the boot process by creating a new configuration file:
-```bash
-sudo nano /etc/initramfs-tools/conf.d/plymouth
-```
-Add the following line to the file:
-```text
-FRAMEBUFFER=y
-```
 
 #### Select the Spinner Plymouth Theme
 
