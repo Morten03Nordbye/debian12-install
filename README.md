@@ -169,31 +169,6 @@ Also remove ugly Debian icon theme
 ```
 sudo convert -size 1920x1080 xc:black /usr/share/images/desktop-base/desktop-grub.png
 ``` 
-
-#### Select the Spinner Plymouth Theme
-
-Set the spinner theme as the default Plymouth theme:
-```bash
-sudo plymouth-set-default-theme spinner
-sudo update-initramfs -u
-```
-
-#### Customize the Spinner Theme (Optional)
-
-If you wish to further customize the spinner theme, you can modify its configuration files:
-
-1. Navigate to the Plymouth theme directory:
-   ```bash
-   cd /usr/share/plymouth/themes/spinner
-   ```
-
-2. Edit the configuration file (`spinner.plymouth`) to make any necessary adjustments:
-   ```bash
-   sudo nano spinner.plymouth
-   ```
-
-3. Optionally, you can replace the images used by the spinner theme. For example, you can replace `throbber.png` with your own custom image.
-
 #### Reboot
 
 Reboot your system to see the changes take effect:
