@@ -155,16 +155,20 @@ Edit the GRUB configuration file to enable Plymouth:
 ```bash
 sudo vim /etc/default/grub
 ```
-Find the line that starts with `GRUB_CMDLINE_LINUX_DEFAULT` and modify it to include `quiet splash`:
+Add/change htis 
 ```text
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+GRUB_TIMEOUT_STYLE=hidden
 ```
 
 Then, update GRUB to apply the changes:
 ```bash
 sudo update-grub2
 ```
-
+Also remove ugly Debian icon theme
+```
+sudo convert -size 1920x1080 xc:black /usr/share/images/desktop-base/desktop-grub.png
+``` 
 
 #### Select the Spinner Plymouth Theme
 
