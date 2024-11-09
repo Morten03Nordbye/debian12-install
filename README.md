@@ -23,6 +23,9 @@ sudo apt install sddm --no-install-recommends -y
 bash -c  "$(curl -fsSL https://raw.githubusercontent.com/officialrajdeepsingh/nerd-fonts-installer/main/install.sh)"
 # Install "Hack" font
 ```
+```Bash
+sudo apt update && sudo apt install fonts-noto-color-emoji
+```
 ### Configure SDDM
 ```bash
 sudo mkdir -p /usr/share/sddm/themes
