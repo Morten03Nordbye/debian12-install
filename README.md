@@ -168,7 +168,11 @@ sudo update-grub2
 Also remove ugly Debian icon theme
 ```
 sudo convert -size 1920x1080 xc:black /usr/share/images/desktop-base/desktop-grub.png
-``` 
+```
+### Setup better i3lock
+https://github.com/betterlockscreen/betterlockscreen
+https://github.com/Raymo111/i3lock-color
+
 #### Reboot
 
 Reboot your system to see the changes take effect:
