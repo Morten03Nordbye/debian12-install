@@ -105,7 +105,7 @@ cp /etc/xdg/dunst/dunstrc~/.config/dunst/dunstrc
 ```
 ### Sound and Media Support
 ```bash
-sudo apt install alsa-utils pavucontrol pulseaudio -y
+sudo apt install alsa-utils pavucontrol pulseaudio gthumb -y
 ```
 ### Bluetooth Support
 ```bash
